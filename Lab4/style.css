@@ -1,0 +1,11 @@
+header {
+    text-align: center;
+}
+
+#Preguntas {
+    text-align: justify-all;
+}
+
+#Preguntas ol,p{
+    color: blue;
+}
