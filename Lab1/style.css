@@ -1,0 +1,13 @@
+header h1{
+    text-align: center;
+}
+h2{
+    font-family: fantasy, "Times New Roman", Times, serif;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(src/bg.gif);
+    
+}
