@@ -49,5 +49,20 @@ function inverso(){
     
 }
 
+function suma(){
+    var num1, num2, res;
+    num1= Math.floor(Math.random()*10);
+    num2= Math.floor(Math.random()*10);
+    var time1 = performance.now();
+    res = prompt("Cuanto es la suma de " + num1 + " + " + num2,"Escribe tu respuesta");
+    var time2 = performance.now();
+    var dif = (time2-time1)/1000;
+    if((num1 + num2) == res){
+        alert("La respuesta es correcta tardaste " + dif );
+    }
+    else{
+        alert("La respuesta es incorrecta tardaste " + dif );
+    }
+}
 
 
