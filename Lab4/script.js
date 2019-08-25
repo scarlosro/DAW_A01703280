@@ -1,4 +1,5 @@
 var number = prompt("Escribe tu nombre", "Text");
+var money;
 
 for(i=1;i<=number;i++){
     document.write("Number is " + i +" Square is: " + Math.pow(i,2));
@@ -65,4 +66,41 @@ function suma(){
     }
 }
 
+
+function myAccount(dinero){
+    this.money = dinero;
+    alert("No se ejecuto");
+    alert("Tienes " + this.money + "en tu cuenta bancaria")
+    var x = prompt("Escribe 1 si quieres depositar, 2 si quieres retirar");
+    if(x == 1){
+        depDinero();
+    }
+    else if( x == 2){
+        disDinero();
+    }
+    else{
+        alert("Escribe una opción correcta");
+        myAccount(this.money);
+    }
+}
+/*
+function myAccount(){
+    this.money = 1000;
+}*/
+function depDinero(){
+    let y= prompt("Escribe cuanto quieres depositar");
+    this.money= parseInt(this.money) + parseInt(y);
+    myAccount(this.money);
+}
+function disDinero(){
+    let y= prompt("Escribe cuanto quieres depositar");
+    if (this.money < y){
+        alert("No tienes el saldo suficiente para retirar esa cantidad");
+        myAccount(this.money);
+        }
+    else{
+        this.money-=y;
+        myAccount(this.money);
+    }
+}
 
