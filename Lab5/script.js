@@ -96,3 +96,11 @@ function carrito(){
     
     document.getElementById("resu").innerHTML = text;
 }
+
+
+function calculoAnual(){
+    let ing;
+    let egre;
+    let impPag;
+    
+}
