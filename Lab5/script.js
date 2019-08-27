@@ -54,3 +54,45 @@ function validarContrasena(){
         alert(feedback);
     }
 }
+
+
+function carrito(){
+    alert("It will work");
+    
+    let iphones;
+    let sams;
+    let huaw;
+    let text;
+    let pro1=0;
+    let cos1=0;
+    let pro2=0;
+    let cos2=0;
+    let pro3=0;
+    let cos3=0;
+    text ="El resumen de tu compra es <br/>";
+    
+    iphones = document.getElementById("iph").value;
+    sams = document.getElementById("sam").value;
+    huaw = document.getElementById("hua").value;
+    
+    if(iphones > 0){
+        cos1 = 20000*iphones;
+        pro1 = (cos1*1.16);
+        text+= iphones + " iPhones sería un subtotal de " + cos1 + " IVA " + parseInt(cos1*.16) + " Total " + pro1 + "<br/>";
+    }
+    
+    if(sams > 0){
+        cos2 = 18000*sams;
+        pro2 = (cos2*1.16);
+        text+= sams + " Samsungs sería un subtotal de " + cos2 + " IVA " + parseInt(cos2*.16) + " Total " + pro2 + "<br/>";
+    }
+    
+    if(huaw > 0){
+        cos3 = 10000*huaw;
+        pro3 = (cos3*1.16);
+        text+= huaw + " Huawei sería un subtotal de " + cos3 + " IVA " + parseInt(cos3*.16) + " Total " + pro3 + "<br/>";
+    }
+    text+="Total a pagar: " + parseInt(pro1+pro2+pro3);
+    
+    document.getElementById("resu").innerHTML = text;
+}
