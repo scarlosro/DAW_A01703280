@@ -1,0 +1,42 @@
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type= "text/css" href="style.css" />
+        <title> Laboratorio No. 5 </title>
+
+    </head>
+    <body>
+         <script src="script.js"></script>
+        <header>
+            <h1>Laboratorio #5 </h1>
+            <h2> Carlos Alfonso Sánchez Rosales - A01703280</h2>
+        </header>
+        <nav>
+            <table><tr>Validador de password</tr>
+            <tr>Programa libre</tr>
+            <tr>Validador de password</tr></table>
+        </nav>
+        <section>
+            <article id= "password">
+                <h2>Creador de contraseña segura</h2>
+                <p>Instrucciones para generar una contraseña segura</p>
+                <ol><li>Al menos una letra mayuscula</li>
+                <li>Un caracter especial(validos son $,_,-,%,!,=)</li>
+                <li>Mínimo 8 caracteres, Máximo 11</li>
+                <li>Un número</li></ol>
+                <form><label>Escribe tu contraseña</label><input type="text" id="pass1" value="" maxlength="11"/><br/>
+                    <label>Escribe tu contraseña, nuevamente</label><input type="text" id="pass2" value="" maxlength="11"/>
+                    <input type="submit" onClick="validarContrasena()" value="validar"/>
+                </form>
+            </article>
+            <article id="preguntas">
+                <h2>Cuestionario</h2>
+                <ol>
+                <li>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</li>
+                <li>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</li>
+                <li>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</li></ol>
+            </article>
+            <article id="venta"></article>
+        </section>
+    </body>
+</html>

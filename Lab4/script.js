@@ -2,7 +2,7 @@ var number = prompt("Escribe tu nombre", "Text");
 var money;
 
 for(i=1;i<=number;i++){
-    document.write("Number is " + i +" Square is: " + Math.pow(i,2));
+    document.write("Number is " + i +" Square is: " + Math.pow(i,2) + "Cubo es " + Math.pow(i,3));
     document.write("<br/>");
 }
 
