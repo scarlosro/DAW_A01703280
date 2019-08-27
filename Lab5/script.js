@@ -102,5 +102,6 @@ function calculoAnual(){
     let ing;
     let egre;
     let impPag;
-    
+    let tasa;
+    let cuoFi;
 }
