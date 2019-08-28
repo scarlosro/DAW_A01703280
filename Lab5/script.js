@@ -102,7 +102,7 @@ function calculoAnual(){
     let ing;
     let egre;
     let utilidad;
-    let impPag;
+    let impPag=0;
     let tasa=0.0000;
     let cuoxTa=0.00;
     let cuoFi=0.00;
@@ -169,18 +169,19 @@ function calculoAnual(){
             tasa= 0.3500;
             cuoFi=1097220.21;
         }
-        cuoxTa = (utilidad-limInf)*tasa;
-    stotal = cuoFi + cuoxTa;
-    total = stotal - impPag;
+        cuoxTa = (parseFloat((utilidad-limInf)*tasa)).toFixed(2);
+        cuoFi = parseFloat(cuoFi).toFixed(2);
+        stotal = parseFloat(cuoFi) + parseFloat(cuoxTa);
+        total = parseFloat(stotal) - parseFloat(impPag);
     }
     
     
     document.getElementById("inf").innerHTML = limInf;
     document.getElementById("exc").innerHTML = (utilidad-limInf);
-    document.getElementById("tasa").innerHTML = (tasa*100) +"%";
+    document.getElementById("tasa").innerHTML = parseFloat((tasa*100)).toFixed(2) +"%";
     document.getElementById("impT").innerHTML = cuoxTa;
     document.getElementById("cuoF").innerHTML = cuoFi;
     document.getElementById("total").innerHTML = stotal;
-    document.getElementById("fin").innerHTML = total;
+    document.getElementById("fin").innerHTML = total.toFixed(2);
     
 }
