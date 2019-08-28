@@ -101,7 +101,86 @@ function carrito(){
 function calculoAnual(){
     let ing;
     let egre;
+    let utilidad;
     let impPag;
-    let tasa;
-    let cuoFi;
+    let tasa=0.0000;
+    let cuoxTa=0.00;
+    let cuoFi=0.00;
+    let stotal=0.00;
+    let total=0.00;
+    let limInf=0.00;
+    ing = document.getElementById("ingreso").value;
+    egre = document.getElementById("egreso").value;
+    impPag = document.getElementById("impPag").value;
+    utilidad = ing - egre;
+    if(utilidad >= 0){
+        if(utilidad >= 0.01 && utilidad <= 6942.20 ){
+            limInf = 0.01;
+            tasa= 0.0192;
+            cuoFi=0.00;
+        }
+        else if(utilidad >=6942.21 && utilidad <= 58922.16){
+            limInf = 6942.21;
+            tasa= 0.0640;
+            cuoFi=133.28;
+        }
+        else if(utilidad >=58,922.17 && utilidad <= 103550.44){
+            limInf = 58,922.17;
+            tasa= 0.1088;
+            cuoFi=3460.01;
+        }
+        else if(utilidad >=103550.45 && utilidad <= 120372.83){
+            limInf = 103550.45;
+            tasa= 0.1600;
+            cuoFi=8315.57;
+        }
+        else if(utilidad >=120372.84 && utilidad <= 144119.23){
+            limInf = 120372.84;
+            tasa= 0.1792;
+            cuoFi=11007.14;
+        }
+        else if(utilidad >=144119.24 && utilidad <= 290667.75){
+            limInf = 144119.24;
+            tasa= 0.2136;
+            cuoFi=15262.49;
+        }
+        else if(utilidad >=290667.76 && utilidad <= 458132.29){
+            limInf = 290667.76;
+            tasa= 0.2352;
+            cuoFi=46565.26;
+        }
+        else if(utilidad >=458132.30 && utilidad <= 874650.00){
+            limInf = 458132.30;
+            tasa= 0.3000;
+            cuoFi=85952.92;
+        }
+        else if(utilidad >=874650.01 && utilidad <= 1166200.00){
+            limInf = 874650.01;
+            tasa= 0.3200;
+            cuoFi=210908.23;
+        }
+        else if(utilidad >=120372.84 && utilidad <= 3498600.00){
+            limInf = 120372.84;
+            tasa= 0.3400;
+            cuoFi=304204.21;
+        }
+        else if(utilidad >= 3498600.01){
+            limInf = 3498600.01;
+            tasa= 0.3500;
+            cuoFi=1097220.21;
+        }
+        cuoxTa = (utilidad-limInf)*tasa;
+    stotal = cuoFi + cuoxTa;
+    total = stotal - impPag;
+    }
+    
+    
+    document.getElementById("inf").innerHTML = limInf;
+    document.getElementById("exc").innerHTML = (utilidad-limInf);
+    document.getElementById("tasa").innerHTML = (tasa*100) +"%";
+    document.getElementById("impT").innerHTML = cuoxTa;
+    document.getElementById("cuoF").innerHTML = cuoFi;
+    document.getElementById("total").innerHTML = stotal;
+    document.getElementById("fin").innerHTML = total;
+    
 }
