@@ -1,7 +1,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type= "text/css" href="style.css" />
+        <link rel="stylesheet" type= "text/css" href="css/style.css" />
         <title> Laboratorio No. 5 </title>
 
     </head>
@@ -11,10 +11,12 @@
             <h1>Laboratorio #5 </h1>
             <h2> Carlos Alfonso Sánchez Rosales - A01703280</h2>
         </header>
-        <nav>
-            <table><tr>Validador de password</tr>
-            <tr>Programa libre</tr>
-            <tr>Validador de password</tr></table>
+        <nav id="menu">
+            <ul>
+            <li><a href="">Validador de password</a></li>
+            <li><a href="">Programa libre</a></li>
+            <li><a href="">Validador de password</a></li>
+            </ul>
         </nav>
         <section>
             <article id= "password">
@@ -23,10 +25,10 @@
                 <ol><li>Al menos una letra mayuscula</li>
                 <li>Un caracter especial(validos son $,_,-,%,!,=)</li>
                 <li>Mínimo 8 caracteres, Máximo 11</li>
-                <li>Un número</li></ol>
-                <form><label>Escribe tu contraseña</label><input type="text" id="pass1" value="" maxlength="11"/><br/>
-                    <label>Escribe tu contraseña, nuevamente</label><input type="text" id="pass2" value="" maxlength="11"/>
-                    <input type="submit" onClick="validarContrasena()" value="validar"/>
+                <li>Un número</li></ol><br/>
+                <form><label><strong>Escribe tu contraseña</strong></label><br/><input type="text" id="pass1" value="" maxlength="11"/><br/><br/>
+                    <label><strong>Escribe tu contraseña, nuevamente</strong></label><br/><input type="text" id="pass2" value="" maxlength="11"/><br/>
+                    <input type="submit" onClick="validarContrasena()" value="VALIDAR"/>
                 </form>
             </article>
             <article id="preguntas">
@@ -40,6 +42,7 @@
                 <p> Brindan una gran ayuda al leer cadenas y ahorrarnos varias validaciones con manejos de cadenas.A final de cuentas, las validaciones son estructuradas y elaboradas por parte del programador. Todo depende del orden que haga las validaciones y el cómo ejecutar sus acciones. [1]</p></ol>
             </article>
             <article id="venta">
+                <h2>Tienda virtual</h2>
             <table>
                 <thead>
                     <tr>
