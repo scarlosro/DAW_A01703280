@@ -1,0 +1,173 @@
+header{
+    padding: 0;
+    text-align: center;
+    background-color: #60E6B9;
+    color: black;
+    font-family:sans-serif;
+}
+body{
+    background-color: #60E6B9;
+}
+body:after{
+    content: "©";
+    
+}
+#menu{
+    font-family:sans-serif;
+    font-size: 16;
+    background-color: #2F8F6F;
+}
+ul{
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2F8F6F;
+}
+
+#menu  li{
+  float: left;
+}
+
+#menu  li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color:#2F8F6F;
+    
+}
+
+#menu li a:hover{
+    background-color:#2F7F8F;
+}
+
+img{
+    height: 200px;
+    width: 150px;
+}
+
+#password{
+    padding: 0px;
+    background: url(src/back.png) no-repeat center;
+    background-size: contain;
+    position: relative;
+    font-family: sans-serif;
+    font-size: 14;
+}
+
+#password h2{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+input[type=text]{
+    width: 18%;
+    padding: 8px 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    border: 1px lightblue;
+}
+input[type=button]:focus{
+    border: 1px solid blue;
+}
+
+label{
+    padding: 7px 10px;
+}
+
+input[type=submit]{
+    border: none;
+    padding 7px 10px;
+    width: 80px;
+    height: 40px;
+    margin 4px 2px;
+    font-family: sans-serif;
+    font-size: 12;
+    left: 100px;
+}
+
+#preguntas{
+    padding: 0px;
+    background-size: contain;
+    position: relative;
+    font-family: sans-serif;
+    font-size: 14;
+}
+
+#preguntas h2{
+    text-align: center;
+}
+
+#preguntas ol li{
+    font-family: monospace;
+    font-size: 18;
+    font-style: italic;
+}
+#preguntas ol p{
+    font font-family: monospace;
+    font-size: 16;
+    text-align: justify-all;
+}
+
+#venta h2{
+    text-align: center;
+}
+
+#venta{
+    padding: 0px;
+    font-family: sans-serif;
+    font-size: 14;
+}
+
+#venta table{
+    width: 100%;
+    text-align: center;
+    border-color: azure;
+}
+
+
+select{
+    border: none;
+    width: 30px;
+    height: 30px;
+    padding 15px 10px;
+    font-family: sans-serif;
+    font-size: 10;
+}
+
+input[type=button]{
+    border: none;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    font-family: monospace;
+    font-size: 20;
+}
+
+
+#resu{
+    font-family: monospace;
+    font-size: 14;
+}
+
+
+#Libre{
+  font-family: monospace;
+  font-size:  16;
+    
+}
+
+#fin{
+    font-style:italic;
+}
+
+
+
+
+
+
+

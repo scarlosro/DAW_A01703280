@@ -1,0 +1,116 @@
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type= "text/css" href="css/style.css" />
+        <title> Laboratorio No. 5 </title>
+
+    </head>
+    <body>
+         <script src="script.js"></script>
+        <header>
+            <h1>Laboratorio #5 </h1>
+            <h2> Carlos Alfonso Sánchez Rosales - A01703280</h2>
+        </header>
+        <nav id="menu">
+            <ul>
+            <li><a href="#password">Validador de password</a></li>
+            <li><a href="#preguntas">Cuestionario</a></li>
+            <li><a href="#Libre">Actividad Libre</a></li>
+            </ul>
+        </nav>
+        <section>
+            <article id= "password">
+                <h2>Creador de contraseña segura</h2>
+                <p>Instrucciones para generar una contraseña segura</p>
+                <ol><li>Al menos una letra mayuscula</li>
+                <li>Un caracter especial(validos son $,_,-,%,!,=)</li>
+                <li>Mínimo 8 caracteres, Máximo 11</li>
+                <li>Un número</li></ol><br/>
+                <form><label><strong>Escribe tu contraseña</strong></label><br/><input type="text" id="pass1" value="" maxlength="11"/><br/><br/>
+                    <label><strong>Escribe tu contraseña, nuevamente</strong></label><br/><input type="text" id="pass2" value="" maxlength="11"/><br/>
+                    <input type="submit" onClick="validarContrasena()" value="VALIDAR"/>
+                </form>
+            </article>
+            <article id="preguntas">
+                <h2>Cuestionario</h2>
+                <ol>
+                <li>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</li>
+                    <p>Para facilitar la filtración de errores a la hora de leer datos complejos y que llevan multiples condiciones, para la hora de mandar al servidor se pueda evitar aun más tardo en la respuesta del servidor o enviar errores dentro del servidor [1]</p>
+                <li>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</li>
+                    <p>Se puede saltar la seguridad si deshabilitas JS en tu navegador [2]</p>
+                <li>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</li>
+                <p> Brindan una gran ayuda al leer cadenas y ahorrarnos varias validaciones con manejos de cadenas.A final de cuentas, las validaciones son estructuradas y elaboradas por parte del programador. Todo depende del orden que haga las validaciones y el cómo ejecutar sus acciones. [1]</p></ol>
+            </article>
+            <article id="venta">
+                <h2>Tienda virtual</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>iPhone XS Max</td>
+                        <td>Samsung S10</td>
+                        <td>Huawei P30</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="Images/iphone.jpg" alt="iphone"/></td>
+                        <td><img src="Images/samsung.jpg" alt="samsung" /></td>
+                        <td><img src="Images/huawuei.jpg" alt="huawei"/></td>
+                    </tr>
+                    <tr>
+                        <td>$20,000.00</td>
+                        <td>$18,000.00</td>
+                        <td>$10,000.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                   <td> <select id="iph">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option></select>
+                    </td>
+                    <td> <select id="sam">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option></select>
+                    </td>
+                    <td> <select id="hua">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option></select>
+                    </td>
+                </tfoot>
+            </table>
+                <form><input type="button" onClick="carrito()" value="Comprar"/></form>
+                <br>
+                <p id="resu"></p>
+            </article>
+            <article id="Libre">
+                <h2>Calculta tu impuesto anual</h2>
+                <p> Programa donde tienes que ingresar tus Ingresos del 2018, tus Gastos, Así como los impuestos que pagaste durante el año</p>
+                <form>
+                   <label><strong>Ingreso 2018</strong></label><br/><input type="number" id="ingreso"/> <br/><br/>
+                    <label><strong>Egreso 2018</strong></label><br/><input type="number" id="egreso"/><br/><br/>
+                    <label> <strong>Impuesto Pagado</strong></label><br/><input type="number" id="impPag"/><br/><br/>
+                    <input type="button" value="Calcular" onClick="calculoAnual()"/><br/><br/>
+                    <label>Limite inferior: </label><label id="inf"></label><br/>
+                    <label>Excedente: </label><label id="exc"></label><br/>
+                    <label>Tasa: </label><label id="tasa"></label><br/>
+                    <label>Importe sobre tasa: </label><label id="impT"></label><br/>
+                    <label>Cuota Fija: </label><label id="cuoF"></label><br/>
+                    <label>Total Impuesto: </label><label id="total"></label><br/>
+                    <label>Por pagar o a Favor: </label><label id="fin"></label><br/>
+                    
+                </form>
+            </article>
+        </section>
+        <footer>
+            <ol>
+            <li>https://blog.michelletorres.mx/validar-formularios-con-javascript/</li>
+            <li>https://lenguajehtml.com/p/html/formularios/validaciones-html5</li></ol>
+        </footer>
+    </body>
+</html>
