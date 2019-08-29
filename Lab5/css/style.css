@@ -145,6 +145,23 @@ input[type=button]{
 }
 
 
+#resu{
+    font-family: monospace;
+    font-size: 14;
+}
+
+
+#Libre{
+  font-family: monospace;
+  font-size:  16;
+    
+}
+
+#fin{
+    font-style:italic;
+}
+
+
 
 
 

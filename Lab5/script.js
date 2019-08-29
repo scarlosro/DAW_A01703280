@@ -99,9 +99,9 @@ function carrito(){
 
 
 function calculoAnual(){
-    let ing;
-    let egre;
-    let utilidad;
+    let ing=0;
+    let egre=0;
+    let utilidad=0;
     let impPag=0;
     let tasa=0.0000;
     let cuoxTa=0.00;
@@ -109,11 +109,21 @@ function calculoAnual(){
     let stotal=0.00;
     let total=0.00;
     let limInf=0.00;
+    let exc=0.00;
     ing = document.getElementById("ingreso").value;
     egre = document.getElementById("egreso").value;
     impPag = document.getElementById("impPag").value;
-    utilidad = ing - egre;
-    if(utilidad >= 0){
+    if(ing == "")
+        ing=parseFloat(0);
+    if(egre == "")
+        egre=parseFloat(0);
+    if(impPag == "")
+        impPag=parseFloat(0);
+    
+    utilidad = parseFloat(ing) - parseFloat(egre);
+    
+    if(utilidad > 0){
+        alert(utilidad);
         if(utilidad >= 0.01 && utilidad <= 6942.20 ){
             limInf = 0.01;
             tasa= 0.0192;
@@ -169,19 +179,22 @@ function calculoAnual(){
             tasa= 0.3500;
             cuoFi=1097220.21;
         }
-        cuoxTa = (parseFloat((utilidad-limInf)*tasa)).toFixed(2);
+        exc=parseFloat(utilidad-limInf);
+        cuoxTa = parseFloat(exc*tasa).toFixed(2);
         cuoFi = parseFloat(cuoFi).toFixed(2);
         stotal = parseFloat(cuoFi) + parseFloat(cuoxTa);
         total = parseFloat(stotal) - parseFloat(impPag);
+        
     }
-    
-    
-    document.getElementById("inf").innerHTML = limInf;
-    document.getElementById("exc").innerHTML = (utilidad-limInf);
-    document.getElementById("tasa").innerHTML = parseFloat((tasa*100)).toFixed(2) +"%";
-    document.getElementById("impT").innerHTML = cuoxTa;
-    document.getElementById("cuoF").innerHTML = cuoFi;
-    document.getElementById("total").innerHTML = stotal;
-    document.getElementById("fin").innerHTML = total.toFixed(2);
+    else{
+        total= -impPag;
+    }
+        document.getElementById("inf").innerHTML = limInf;
+        document.getElementById("exc").innerHTML = exc;
+        document.getElementById("tasa").innerHTML = parseFloat((tasa*100)).toFixed(2) +"%";
+        document.getElementById("impT").innerHTML = cuoxTa;
+        document.getElementById("cuoF").innerHTML = cuoFi;
+        document.getElementById("total").innerHTML = stotal;
+        document.getElementById("fin").innerHTML = total.toFixed(2);
     
 }
