@@ -2,14 +2,15 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type= "text/css" href="css/style.css" />
-        <title> Laboratorio No. 5 </title>
+        <title> Laboratorio No. 6 </title>
 
     </head>
     <body>
          <script src="script.js"></script>
         <header>
-            <h1>Laboratorio #5 </h1>
-            <h2> Carlos Alfonso Sánchez Rosales - A01703280</h2>
+            <h1>Laboratorio #6 </h1>
+            <h2 onmousedown="cambiarFormato()" id="dar"> Carlos Alfonso Sánchez Rosales - A01703280</h2>
+            <p id="arriba" onmouseover="encima()" onmouseout="fuera()"> Pon el mouse en esta parte :)</p>
         </header>
         <nav id="menu">
             <ul>
@@ -20,8 +21,10 @@
         </nav>
         <section>
             <article id= "password">
-                <h2>Creador de contraseña segura</h2>
-                <p>Instrucciones para generar una contraseña segura</p>
+    
+                <div class="ayuda"><h2 id ="mhelp">Creador de contraseña segura</h2>
+                <span class="tooltip">Instrucciones para generar una contraseña segura Hoy en día es muy importante que generes una contraseña segura, por lo cual aquí te indicamos si lo es.</span></div>
+                <p class="">Instrucciones para generar una contraseña segura 
                 <ol><li>Al menos una letra mayuscula</li>
                 <li>Un caracter especial(validos son $,_,-,%,!,=)</li>
                 <li>Mínimo 8 caracteres, Máximo 11</li>
@@ -34,12 +37,13 @@
             <article id="preguntas">
                 <h2>Cuestionario</h2>
                 <ol>
-                <li>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</li>
-                    <p>Para facilitar la filtración de errores a la hora de leer datos complejos y que llevan multiples condiciones, para la hora de mandar al servidor se pueda evitar aun más tardo en la respuesta del servidor o enviar errores dentro del servidor [1]</p>
-                <li>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</li>
-                    <p>Se puede saltar la seguridad si deshabilitas JS en tu navegador [2]</p>
-                <li>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</li>
-                <p> Brindan una gran ayuda al leer cadenas y ahorrarnos varias validaciones con manejos de cadenas.A final de cuentas, las validaciones son estructuradas y elaboradas por parte del programador. Todo depende del orden que haga las validaciones y el cómo ejecutar sus acciones. [1]</p></ol>
+                <li>¿Cuáles son las diferencias entre los posibles valores de la propiedad position?</li>
+                    <p></p>
+                <li>¿Cuáles son los valores estándar para la propiedad visibility?</li>
+                    <p></p>
+                <li>¿Qué es el zIndex y para qué sirve?</li>
+                <p> </p></ol>
+                
             </article>
             <article id="venta">
                 <h2>Tienda virtual</h2>
@@ -55,7 +59,7 @@
                     <tr>
                         <td><img src="Images/iphone.jpg" alt="iphone"/></td>
                         <td><img src="Images/samsung.jpg" alt="samsung" /></td>
-                        <td><img src="Images/huawuei.jpg" alt="huawei"/></td>
+                        <td><img src="Images/huawuei.jpg" alt="huawei" draggable="true" ondragstart="drag(event)"/></td>
                     </tr>
                     <tr>
                         <td>$20,000.00</td>
@@ -108,6 +112,9 @@
             </article>
         </section>
         <footer>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <br/>
+                <img id="drag1" src="Images/huawuei.jpg" draggable="true" ondragstart="drag(event)"> 
             <ol>
             <li>https://blog.michelletorres.mx/validar-formularios-con-javascript/</li>
             <li>https://lenguajehtml.com/p/html/formularios/validaciones-html5</li></ol>
