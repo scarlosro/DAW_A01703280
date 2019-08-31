@@ -5,6 +5,9 @@ let num=false;
 let upper=false;
 let minus=false;
 let charac=false;
+let pasar = setInterval(cadaTiempo,1000);
+let otra = setTimeout(saluda,1000)
+var n=20;
 
 
 function validarContrasena(){
@@ -197,4 +200,28 @@ function calculoAnual(){
         document.getElementById("total").innerHTML = stotal;
         document.getElementById("fin").innerHTML = total.toFixed(2);
     
+}
+
+
+function encima(){
+    document.getElementById("arriba").innerHTML = "Pasaste x aquí";
+    
+}
+
+function fuera(){
+    document.getElementById("arriba").innerHTML = "Pon el mouse en esta parte :)";
+}
+
+function cambiarFormato(){
+    document.getElementById("dar").style.fontFamily ="monospace";
+    document.getElementById("dar").style.fontSize = "50";
+}
+
+function cadaTiempo(){
+    document.getElementById("crece").style.fontSize = n;
+    n = n + 1;
+}
+
+function saluda(){
+    alert("Bienvenido a la página web");
 }
