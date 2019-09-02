@@ -239,4 +239,3 @@ function drop(ev) {
 function allowDrop(ev) {
   ev.preventDefault();
 }
-
