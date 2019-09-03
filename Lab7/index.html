@@ -15,7 +15,7 @@
 
     </head>
     <body>
-         <script src="script.js"></script>
+        
         <header>
             <h1 id="crece">Laboratorio #6 </h1>
             <h2 onmousedown="cambiarFormato()" id="dar"> Carlos Alfonso Sánchez Rosales - A01703280</h2>
@@ -69,9 +69,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="Images/iphone.jpg" alt="iphone"/></td>
-                        <td><img src="Images/samsung.jpg" alt="samsung" /></td>
-                        <td><img src="Images/huawuei.jpg" alt="huawei" draggable="true" ondragstart="drag(event)"/></td>
+                        <td><img class="responsive-img" src="Images/iphone.jpg" alt="iphone"/></td>
+                        <td><img class="responsive-img" src="Images/samsung.jpg" alt="samsung" /></td>
+                        <td><img class="responsive-img" src="Images/huawuei.jpg" alt="huawei" draggable="true" ondragstart="drag(event)"/></td>
                     </tr>
                     <tr>
                         <td>$20,000.00</td>
@@ -125,10 +125,6 @@
         </section>
         <footer>
             
-            <br/>
-                <img id="drag1" src="Images/huawuei.jpg" draggable="true" ondragstart="drag(event)"> 
-            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            
             <br/><br/><br/>
             <ol>
             <li>https://es.stackoverflow.com/questions/37930/cual-es-la-diferencia-entre-position-relative-position-absolute-y-position</li>
@@ -138,5 +134,8 @@
             <li>https://www.w3schools.com/html/html5_draganddrop.asp</li>
             <li>https://codepen.io/tutosytips/pen/wMWPPz</li></ol>
         </footer>
+         <script src="script.js"></script>
+        <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
 </html>
