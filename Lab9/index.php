@@ -58,4 +58,24 @@
             </form>
         </section>
         
+        <section>
+            <h3>Preguntas</h3>
+                <lo>
+                    <li>¿Qué hace la función phpinfo()? Describe y discute 3 datos que llamen tu atención</li>
+                    <p>Nos muestra la configuracion que esta en el PHP</p>
+                    <p>INFO_CONFIGURATION: Valores locales  y maestros actuales de las directivas de PHp.</p><p>INFO_ENVIROMENT: Información de las variables de entorno</p>
+                    <p>INFO_LICENSE: información de la licensia de PHP[1]</p>
+                    <li>¿Qué cambios tendrías que hacer en la configuración del servidor para que pudiera ser apto en un ambiente de producción?</li>
+                    <p>Sobre las conmpilaciones  y extensiones utilizadas en PHP[1]</p>
+                    <li>¿Cómo es que si el código está en un archivo con código html que se despliega del lado del cliente, se ejecuta del lado del servidor? Explica.
+                    <p> Nosotros hacemos peticiones desde un archivo de HTML residente en el servidor, por lo cual envía la información para que sea procesada, recordando que PHP es un Preprocesador de Hipertextos[2]</p>
+                    </li>
+                </lo>
+        </section>
+        <footer>
+        <ol>
+            <li>https://www.php.net/manual/es/function.phpinfo.php</li>
+        <li>http://www.adelat.org/media/docum/nuke_publico/lenguajes_del_lado_servidor_o_cliente.html</li>
+            </ol>
+        </footer>
     </body>
