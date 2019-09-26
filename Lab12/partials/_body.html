@@ -1,0 +1,63 @@
+ <body>
+    <header>
+        <h1> Laboratorio #13</h1>
+        <h2> Carlos Alfonso Sánchez Rosales A01703280</h2>
+        
+    </header>
+        <nav class="cyan lighten-2">
+            <ul>
+                <li><a href="#Program">Programa</a></li>
+                <li><a href="#Preguntas">Preguntas</a></li>
+                <li><a href="#Ref">Referencias</a></li>
+            </ul>
+        </nav>
+     
+     <br>
+     <h4>Calcula el impuesto que pagarás del año </h4>
+     <form id="Program"class="col s12" action="registro_controller.php" id="forma" method="get">
+         <label id="icon_prefix" ><strong>Nombre</strong></label><br/><input id="nombre" name="nombre" type="text"/><br/><br/>
+         
+         <label><strong>Correo Electrónico</strong></label><br/><input id="correo" name="correo" type="email" /><br/><br/>
+         <label><strong>Ingreso 2018</strong></label><br/><input type="number" name="ingreso" id="ingreso"/> <br/><br/>
+         <label><strong>Egreso 2018</strong></label><br/><input type="number" name="egreso" id="egreso"/><br/><br/>
+         <label> <strong>Impuesto Pagado</strong></label><br/><input type="number" name="impPag" id="impPag"/><br/><br/>
+         <label>Foto del amigo: </label>
+         <input type="file" name="fileToUpload" id="fileToUpload">
+         <br/>
+         <br/>
+         <button class="btn waves-effect waves-light" type="submit" name="calcular" id="calcular" >Calcular
+        <i class="material-icons left"></i></button>
+     </form>
+     
+     <article id="Preguntas">
+         <h2>Preguntas</h2><br/><br/>
+         <ul class="text-justify"><li><strong>¿Por qué es una buena práctica separar el controlador de la vista?</strong><br/>Nos permite separar los componentes de nuestra aplicación dependiendo de la responsabilidad que tienen.[1]</li><br/><br/>
+        <li><strong>Aparte de los arreglos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?</strong><br/>
+             <ol>
+                <li>$_FILES: Elementos subidos mediante la via POST</li>
+                 <li>$_COOKIE: variables pasadas al script actual a través de Cookies HTTP</li>
+                 <li>$argc: El numero de argumentos pasados pasados al script[2]</li>
+            </ol>
+             </li><br/><br/>
+        <li><strong>Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención.</strong><br/>
+             <ol>
+            <li>is_infinite(): Regresa si el numero es infinito o no, (si es mas largo que PHP_FLOAT_MAX)</li>
+            <li> str_word_count(): Cuenta el numero de palabras en una variable[3]</li>
+            </ol>
+             </li><br/><br/>
+        <li><strong>¿Qué es XSS y cómo se puede prevenir?</strong><br/>
+             Es un ataque de inyección de código malicioso para su posterior ejecución que puede realizarse a sitios web, aplicaciones locales e incluso al propio navegador.
+            <br/>En PHP disponemos de algunas funciones para realizar la prevención de este tipo de ataques XSS: htmlspecialchars(), htmlentities() y strip_tags()<br/>[4][5]</li><br/><br/>
+         </ul>
+     </article>
+     
+     <article id="Ref">
+        Referencias
+         <ol>
+            <li>https://codigofacilito.com/articulos/mvc-model-view-controller-explicado</li>
+             <li>https://www.php.net/manual/en/reserved.variables.php</li>
+             <li>https://www.w3schools.com/php/</li>
+             <li>https://www.seguridad.unam.mx/historico/documento/index.html-id=35</li>
+             <li>https://manuais.iessanclemente.net/index.php/Evitar_ataques_XSS_y_CSRF_con_PHP</li>
+         </ol>
+     </article>

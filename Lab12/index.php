@@ -1,22 +1,21 @@
 <?php
-    session_start();
     require_once("util.php");
     encabezado();
 
-    if(isset($_SESSION["nombre"])) {
+    if(isset($_SESSION["amigo"])) {
         
-        echo "Tu amigo ".$_SESSION["nombre"];
+        echo "Hola ".$_SESSION["nombre"];
         echo '<img class="responsive-img" alt="El chico" src="'.$_SESSION["foto"].'">';
-        include("_dateCuenta.html");
+        include("partials/_respuesta.html");
         
-    } else if(isset($_POST["nombre"])) {
+    } else if(isset($_POST["amigo"])) {
         
         $target_dir = "uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if image file is a actual image or fake image
-        if(isset($_POST["calcular"])) {
+        if(isset($_POST["enviar"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
                 echo "File is an image - " . $check["mime"] . ".";
@@ -58,16 +57,15 @@
         $_SESSION["nombre"] = $_POST["nombre"];
         $_SESSION["foto"] = $target_file;
         
-        echo "Tu amigo ".$_SESSION["nombre"];
+        echo "Tu amigo ".$_SESSION["amigo"];
         
         echo '<img class="responsive-img" alt="El chico" src="'.$_SESSION["foto"].'">';
-        include("_respuesta.html");
+        include("partials/_resultado.html");
         
     } else {
         
-        indice();
+        include("partials/_body.html");
     }
-
     footer();
 
 
