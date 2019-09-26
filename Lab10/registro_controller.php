@@ -97,9 +97,7 @@ if(isset($_GET['calcular'])){
     $paga = $_GET['impPag'];
 
     if(!empty($nom) && is_numeric($ingr) && is_numeric($egre) && is_numeric($paga) && $ingr >= 0 && $egre>= 0 && $paga >=0){
-        
         $calculo = calculoAnual($ingr,$egre,$paga);
-        
         if($calculo == 0){
             $mensaje = "No pagaras impuesto";
         }
@@ -109,14 +107,12 @@ if(isset($_GET['calcular'])){
         else if($calculo < 0){
             $mensaje = "El impuesto a favor es de " .$calculo;
         }
-        
     }
     else{
         $error ="Los datos son incorrectos";
         include("_head.html");
         include("_body.html");
         include("_footer.html");
-        
     }
 }
 else{

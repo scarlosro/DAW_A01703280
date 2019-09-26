@@ -12,4 +12,8 @@
         include("partials/_body.html");
     }
 
+    function inicio(){
+        include("partials/_login.html");
+    }
+
 ?>
