@@ -2,7 +2,7 @@
 
 function conectarDB(){
     $conexion = mysqli_connect("localhost","root","","Fruta");
-    if(!conexion){
+    if($conexion){
         
     }
     mysqli_set_charset($conexion,"utf8");
@@ -26,19 +26,74 @@ function getFruits(){
 
 function busca($fruta){
     $conexion = conectarDB();
-    $sql = "SELECT * FROM Fruit WHERE name = ".$fruta;
+    $sql = 'SELECT * FROM Fruit ';
+    $sql .="WHERE Fruit.nombre='$fruta'";
+    $result= mysqli_query($conexion,$sql) ;
+   
     
-    $result = mysqli_query($conexion,$sql);
+    $regresar='
+    <table>
+        <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Unidad</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Pais</th>
+          </tr>
+        </thead>
+        <tbody>';
+
+     while ($fila = mysqli_fetch_array($result, MYSQLI_BOTH)) {
+        $regresar .= '<tr>
+            <td>'.$fila["nombre"].'</td>
+            <td>'.$fila["units"].'</td>
+            <td>'.$fila["quantity"].'</td>
+            <td>'.$fila["price"].'</td>
+            <td>'.$fila["country"].'</td>
+          </tr>';
+    }
+    $regresar .= ' </tbody>
+      </table>';
+    mysqli_free_result($result);
     closeDB($conexion);
-    return $result;
+    return $regresar;
 }
 
 function baratos($precio){
     $conexion = conectarDB();
-    $sql = "SELECT * FROM Fruit WHERE name <= ".$precio;
+    echo $precio;
+    $sql='SELECT * FROM Fruit';
+    $sql.=" WHERE price <= $precio"; 
     $result = mysqli_query($conexion,$sql);
+    
+     $regresar='
+    <table>
+        <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Unidad</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Pais</th>
+          </tr>
+        </thead>
+        <tbody>';
+
+     while ($fila = mysqli_fetch_array($result, MYSQLI_BOTH)) {
+        $regresar .= '<tr>
+            <td>'.$fila["nombre"].'</td>
+            <td>'.$fila["units"].'</td>
+            <td>'.$fila["quantity"].'</td>
+            <td>'.$fila["price"].'</td>
+            <td>'.$fila["country"].'</td>
+          </tr>';
+    }
+    $regresar .= ' </tbody>
+      </table>';
+    mysqli_free_result($result);
     closeDB($conexion);
-    return $result;
+    return $regresar;
 }
 
 function footer(){
