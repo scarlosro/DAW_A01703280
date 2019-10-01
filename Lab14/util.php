@@ -62,10 +62,10 @@ function busca($fruta){
 
 function baratos($precio){
     $conexion = conectarDB();
-    echo $precio;
-    $sql='SELECT * FROM Fruit';
-    $sql.=" WHERE price <= $precio"; 
-    $result = mysqli_query($conexion,$sql);
+    
+    $sql="SELECT * FROM Fruit WHERE price < '".$precio."'"; 
+    echo $sql;
+    $result= $conexion->query($sql);
     
      $regresar='
     <table>
@@ -81,6 +81,7 @@ function baratos($precio){
         <tbody>';
 
      while ($fila = mysqli_fetch_array($result, MYSQLI_BOTH)) {
+         
         $regresar .= '<tr>
             <td>'.$fila["nombre"].'</td>
             <td>'.$fila["units"].'</td>
@@ -92,6 +93,7 @@ function baratos($precio){
     $regresar .= ' </tbody>
       </table>';
     mysqli_free_result($result);
+    
     closeDB($conexion);
     return $regresar;
 }

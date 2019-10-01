@@ -3,7 +3,7 @@
   head();
   $_POST["precio"] = htmlspecialchars($_POST["precio"]);
   if (isset($_POST["precio"])) {
-      baratos($_POST["precio"]);
+      echo baratos($_POST["precio"]);
   }
   footer();
 ?>
