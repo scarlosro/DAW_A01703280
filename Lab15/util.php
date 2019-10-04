@@ -84,6 +84,18 @@ function busca($fruta){
     return $regresar;
 }
 
+
+function buscadeactualizar($fruta){
+    $conexion = conectarDB();
+    $sql = 'SELECT * FROM Fruit ';
+    $sql .="WHERE Fruit.nombre='$fruta'";
+    $result= mysqli_query($conexion,$sql) ;
+    $fila = mysqli_fetch_array($result, MYSQLI_BOTH);
+    mysqli_free_result($result);
+    closeDB($conexion);
+    return $fila;
+}
+
 function baratos($precio){
     $conexion = conectarDB();
     
@@ -152,6 +164,49 @@ function insertar($nombre,$units,$quantity,$price,$country){
     } 
 
     closeDB($conexion);
+    
+    return $statement;
+    
+}
+
+function actualizar($nombre,$units,$quantity,$price,$country){
+    $conexion = conectarDB();
+    
+    
+    if($nombre == "") {
+        $mensaje = "Debes ingresar una fruta que existe";
+        return $mensaje;
+    } 
+    $resultado = buscadeactualizar($nombre);
+    if($units == ""){
+        $units=$resultado["units"];
+    }
+    if($quantity == ""){
+        $quantity=$resultado["quantity"];
+    }
+    if($price==""){
+        $price=$resultado["price"];
+    }
+    if($country==""){
+        $country=$resultado["country"];
+    }
+    echo $nombre." ".$units." ".$quantity." ".$price." ".$country." ";
+    
+    // insert command specification 
+    $query='UPDATE Fruit SET units=?, quantity=?, price=?, country=? WHERE nombre=?';
+    // Preparing the statement 
+    if (!($statement = $conexion->prepare($query))) {
+        die("No se pudo preparar la consulta para la bd: (" . $conexion->errno . ") " . $conexion->error);
+    }
+    // Binding statement params 
+    if (!$statement->bind_param("sssss", $units, $quantity, $price, $country, $nombre)) {
+        die("Falló la vinculación de los parámetros: (" . $statement->errno . ") " . $statement->error); 
+    }
+    
+    // Executing the statement
+    if (!$statement->execute()) {
+        die("Falló la ejecución de la consulta: (" . $statement->errno . ") " . $statement->error);
+    }
     
     return $statement;
     
