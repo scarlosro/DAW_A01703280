@@ -134,14 +134,15 @@ function eliminar($nombre){
 
 function insertar($nombre,$units,$quantity,$price,$country){
     $conexion = conectarDB();
+    echo $nombre." ".$units." ".$quantity." ".$price." ".$country." ";
     // insert command specification 
-    $query='INSERT INTO Fruit (nombre,units,quantity,price, country) VALUES (?,?,?,?,?) ';
+    $query='INSERT INTO Fruit (nombre, units, quantity, price, country) VALUES (?, ?, ?, ?, ?) ';
     // Preparing the statement 
     if (!($statement = $conexion->prepare($query))) {
-        die("No se pudo preparar la consulta para la bd: (" . $db->errno . ") " . $conexion->error);
+        die("No se pudo preparar la consulta para la bd: (" . $conexion->errno . ") " . $conexion->error);
     }
     // Binding statement params 
-    if (!$statement->bind_param($nombre, $units, $quantity, $price, $country)) {
+    if (!$statement->bind_param("sssss", $nombre, $units, $quantity, $price, $country)) {
         die("Falló la vinculación de los parámetros: (" . $statement->errno . ") " . $statement->error); 
     }
     
@@ -150,7 +151,9 @@ function insertar($nombre,$units,$quantity,$price,$country){
         die("Falló la ejecución de la consulta: (" . $statement->errno . ") " . $statement->error);
     } 
 
-    closeDB($db);
+    closeDB($conexion);
+    
+    return $statement;
     
 }
 
