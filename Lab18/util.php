@@ -15,6 +15,8 @@ function closeDB($conexion){
 }
 
 
+
+
 function getFruits(){
     $conexion = conectarDB();
     $sql ="SELECT * FROM Fruit";
@@ -55,6 +57,40 @@ function busca($fruta){
     $result= mysqli_query($conexion,$sql) ;
    
     
+    $regresar='
+    <table>
+        <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Unidad</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Pais</th>
+          </tr>
+        </thead>
+        <tbody>';
+
+     while ($fila = mysqli_fetch_array($result, MYSQLI_BOTH)) {
+        $regresar .= '<tr>
+            <td>'.$fila["nombre"].'</td>
+            <td>'.$fila["units"].'</td>
+            <td>'.$fila["quantity"].'</td>
+            <td>'.$fila["price"].'</td>
+            <td>'.$fila["country"].'</td>
+          </tr>';
+    }
+    $regresar .= ' </tbody>
+      </table>';
+    mysqli_free_result($result);
+    closeDB($conexion);
+    return $regresar;
+}
+
+function buscaajax($fruta){
+    $conexion = conectarDB();
+    $sql = 'SELECT * FROM Fruit ';
+    $sql .="WHERE Fruit.nombre LIKE '%$fruta%'%";
+    $result= mysqli_query($conexion,$sql);
     $regresar='
     <table>
         <thead>
@@ -228,5 +264,9 @@ function questions(){
     include("partials/_questions.html");
 }
 
+
+function ajax(){
+    include("partials/_ajax.html");
+}
 
 ?>
