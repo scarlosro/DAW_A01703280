@@ -7,6 +7,7 @@ function getRequestObject() {
     //Para manejar las diferencias entre navegadores
     if (window.XMLHttpRequest) {
         // Mozilla, Opera, Safari, Chrome, IE 7+
+        //console.log("its this");
         return (new XMLHttpRequest());
     } else if (window.ActiveXObject) {
         // IE 6-
@@ -36,7 +37,7 @@ function sendRequest() {
 
         //Hacer la petición
         request.open('GET', url, true);
-
+        a
         //Se define qué hacer cuando hay un cambio de estado en la petición
         request.onreadystatechange =
             function () {
@@ -77,3 +78,12 @@ function sendRequest() {
  * esta función se manda a llamar en sendRequest para actualizar la 
  * interface del usuario.
  **/
+function selectValue() {
+
+    var list = document.getElementById("list");
+    var userInput = document.getElementById("userInput");
+    var ajaxResponse = document.getElementById('ajaxResponse');
+    userInput.value = list.options[list.selectedIndex].text;
+    ajaxResponse.style.visibility = "hidden";
+    userInput.focus();
+}

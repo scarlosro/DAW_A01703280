@@ -89,8 +89,9 @@ function busca($fruta){
 function buscaajax($fruta){
     $conexion = conectarDB();
     $sql = 'SELECT * FROM Fruit ';
-    $sql .="WHERE Fruit.nombre LIKE '%$fruta%'%";
+    $sql .="WHERE Fruit.nombre LIKE '%".$fruta."%'";
     $result= mysqli_query($conexion,$sql);
+    echo $sql;
     $regresar='
     <table>
         <thead>
