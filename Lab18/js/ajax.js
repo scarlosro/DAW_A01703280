@@ -37,7 +37,7 @@ function sendRequest() {
 
         //Hacer la petición
         request.open('GET', url, true);
-        a
+        
         //Se define qué hacer cuando hay un cambio de estado en la petición
         request.onreadystatechange =
             function () {

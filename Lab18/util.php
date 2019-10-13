@@ -92,30 +92,13 @@ function buscaajax($fruta){
     $sql .="WHERE Fruit.nombre LIKE '%".$fruta."%'";
     $result= mysqli_query($conexion,$sql);
     echo $sql;
-    $regresar='
-    <table>
-        <thead>
-          <tr>
-              <th>Nombre</th>
-              <th>Unidad</th>
-              <th>Cantidad</th>
-              <th>Precio</th>
-              <th>Pais</th>
-          </tr>
-        </thead>
-        <tbody>';
+    $regresar=array();
 
      while ($fila = mysqli_fetch_array($result, MYSQLI_BOTH)) {
-        $regresar .= '<tr>
-            <td>'.$fila["nombre"].'</td>
-            <td>'.$fila["units"].'</td>
-            <td>'.$fila["quantity"].'</td>
-            <td>'.$fila["price"].'</td>
-            <td>'.$fila["country"].'</td>
-          </tr>';
+       array_push($regresar,array($fila["nombre"],$fila["units"],$fila["quantity"],$fila["price"],$fila["country"]));
     }
-    $regresar .= ' </tbody>
-      </table>';
+   
+    
     mysqli_free_result($result);
     closeDB($conexion);
     return $regresar;
