@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorio 15</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+     <body>
+    <header>
+        <h1> Laboratorio #15</h1>
+        <h2> Carlos Alfonso Sánchez Rosales A01703280</h2>
+        
+    </header>
+        <nav class="cyan lighten-2">
+            <ul>
+                <li><a href="#Program">Programa</a></li>
+                <li><a href="#Preguntas">Preguntas</a></li>
+                <li><a href="#Ref">Referencias</a></li>
+                <?php if(isset($_SESSION["username"])&&isset($_SESSION["password"])): ?>
+                            <li> <a class="col-sm" href="logout.php">Cerrar sesion</a></li>
+                            <?php endif; ?>
+            </ul>
+        </nav>
+     
+     <br>
+         <body>
+   <main>
