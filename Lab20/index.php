@@ -2,7 +2,7 @@
     require_once("util.php");
     head();
     forms();
-    ajax();
+   // ajax();
     questions();
     footer();
 ?>

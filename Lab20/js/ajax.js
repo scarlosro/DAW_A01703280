@@ -2,6 +2,7 @@
  * Función para crear el objeto de la petición asíncrona. 
  * Maneja las diferencias entre distintos navegadores.
  **/
+var $option=1;
 function getRequestObject() {
 
     //Para manejar las diferencias entre navegadores
@@ -31,7 +32,7 @@ function sendRequest() {
             $("#ajaxResponse")[0].style.visibility = "visible";
             $("#ajaxResponse").html(data);
         });
-        }
+     }
     
     else{
     //Se crea el objetivo de la petición asíncrona
@@ -100,3 +101,30 @@ function selectValue() {
     ajaxResponse.style.visibility = "hidden";
     userInput.focus();
 }
+
+
+
+function hideshow(){
+    console.log("hola");
+    
+    if($option){
+        $option=0;
+    }
+    else{
+        $option=1;
+    }
+      $("#Hide").click(function(){
+          if($option==0){
+        $("#ajax2").hide("slow");
+           }
+      });
+      $("#Hide").click(function(){
+          if($option){
+        $("#ajax2").show();
+          console.log("showing")
+              }
+      });
+    
+    console.log($option);
+}
+
